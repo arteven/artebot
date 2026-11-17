@@ -1,0 +1,3 @@
+# Check-4 minimal derivation: only WORKDIR changes (so no mount target is /workspace or a parent of the workspace root)
+FROM nanoclaw-agent-v2-24afc5fb:latest
+WORKDIR /home/node

@@ -1,0 +1,21 @@
+id: nanoclaw-claude-oauth
+display_name: NanoClaw Claude (OAuth token)
+description: Smoke-test profile; OAuth token as Bearer to api.anthropic.com
+category: agent
+credentials:
+  - name: api_key
+    description: Claude Code OAuth token
+    env_vars: [CLAUDE_CODE_OAUTH_TOKEN]
+    required: true
+    auth_style: bearer
+    header_name: authorization
+endpoints:
+  - host: api.anthropic.com
+    port: 443
+    protocol: rest
+    access: full
+    enforcement: enforce
+binaries:
+  - /pnpm/global/*/.pnpm/*/node_modules/@anthropic-ai/claude-code/bin/claude.exe
+  - /usr/local/bin/node
+  - /usr/local/bin/bun

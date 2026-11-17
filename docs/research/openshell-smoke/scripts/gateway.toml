@@ -1,0 +1,18 @@
+[openshell]
+version = 2
+
+[openshell.gateway]
+compute_driver = "docker"
+
+[openshell.drivers.docker]
+# --- the ticket's three knobs ---
+allow_driver_config = true
+enable_bind_mounts = true
+# --- sbx-environment only: the supervisor must egress via the outer TLS-intercepting proxy ---
+https_proxy = "http://gateway.docker.internal:3128"
+no_proxy = "localhost,127.0.0.1,::1,host.openshell.internal"
+proxy_connect_by_hostname = true
+proxy_ca_bundle = "/home/smoke/.config/openshell/sbx-proxy-ca.pem"
+
+[openshell.drivers.docker.resource_admission]
+enabled = false

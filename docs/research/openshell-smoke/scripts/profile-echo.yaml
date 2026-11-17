@@ -1,0 +1,22 @@
+id: smoke-echo
+display_name: Smoke echo
+description: Plain-HTTP echo endpoint on the guest host, proves header substitution
+category: other
+credentials:
+  - name: echo_key
+    description: dummy
+    env_vars: [ECHO_KEY]
+    required: true
+    auth_style: header
+    header_name: x-api-key
+endpoints:
+  - host: host.openshell.internal
+    port: 9999
+    protocol: rest
+    access: full
+    enforcement: enforce
+    allowed_ips: ["0.0.0.0/0"]
+binaries:
+  - /usr/local/bin/python3.12
+  - /usr/local/bin/python3
+  - /usr/bin/python3

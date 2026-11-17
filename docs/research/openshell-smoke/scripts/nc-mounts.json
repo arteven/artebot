@@ -1,0 +1,5 @@
+{"docker":{"mounts":[
+{"type":"bind","source":"/home/smoke/nc/sess","target":"/workspace","read_only":false},
+{"type":"bind","source":"/home/smoke/nc/agent","target":"/workspace/agent","read_only":false},
+{"type":"bind","source":"/home/smoke/nc/claude","target":"/home/node/.claude","read_only":false},
+{"type":"bind","source":"/home/smoke/nc/appsrc","target":"/app/src","read_only":true}]}}
